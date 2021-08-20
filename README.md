@@ -2,6 +2,8 @@
 > Circle detection in images using Python.
 
 
+![](nbs/sep_demo.gif)
+
 ## Installation
 
 ```bash
