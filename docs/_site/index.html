@@ -334,9 +334,34 @@ or from the matplotlib source distribution
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Installation">Installation<a class="anchor-link" href="#Installation"> </a></h2><div class="highlight"><pre><span></span>pip install CSF
 </pre></div>
-<p>or using github
-```bash
-git clone</p>
+<p>or using github</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ComputerVisionLaboratory/CSF
+<span class="nb">cd</span> CSF
+pip install .
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span> <span class="k">as</span> <span class="nn">cv</span>
+<span class="kn">import</span> <span class="nn">circle_finder</span>
+
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/path/to/image.jpg&#39;</span><span class="p">)</span>
+<span class="n">csf</span> <span class="o">=</span> <span class="n">circle_finder</span><span class="o">.</span><span class="n">CircularSeparabilityFilter</span><span class="p">()</span>
+
+<span class="n">circles</span> <span class="o">=</span> <span class="n">csf</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circles</span><span class="p">)</span>
+</pre></div>
+<p>See more in tutorials.</p>
 
 </div>
 </div>
