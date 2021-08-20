@@ -1,9 +1,7 @@
 {
-  "CSF": {
+  "circle_finder": {
     "Overview": "/",
-    "Locating a Ball with X-AI": "Locating_a_ball_with_X-AI.html",
-    "Locating a Ball with Segmentation Networks": "Locating_a_ball_with_segnets.html",
-    "Locating a Ball with Object Detectors": "Locating_a_ball_with_Object_Detectors.html",
-    "Title": "Untitled.html"
+    "csf": "csf.html",
+    "Circular Seperability Filter vs Hough Circle Detection": "Hough_Circle_Comparison.html"
   }
 }

@@ -26,8 +26,10 @@ import circle_finder
 img = cv.imread('/path/to/image.jpg')
 csf = circle_finder.CircularSeparabilityFilter()
 
-circles = csf(img)
+circles = csf.find_circles(img, num_circles=1)
 print(circles)
+>>>[[50, 50]]
 ```
+
 
 See more in tutorials.

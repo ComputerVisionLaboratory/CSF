@@ -10,18 +10,12 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Locating a Ball with X-AI
-      url: Locating_a_ball_with_X-AI.html
+      title: csf
+      url: csf.html
     - output: web,pdf
-      title: Locating a Ball with Segmentation Networks
-      url: Locating_a_ball_with_segnets.html
-    - output: web,pdf
-      title: Locating a Ball with Object Detectors
-      url: Locating_a_ball_with_Object_Detectors.html
-    - output: web,pdf
-      title: Title
-      url: Untitled.html
+      title: Circular Seperability Filter vs Hough Circle Detection
+      url: Hough_Circle_Comparison.html
     output: web
-    title: CSF
+    title: circle_finder
   output: web
   title: Sidebar

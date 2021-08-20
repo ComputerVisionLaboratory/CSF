@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   
   <li>
-      <a href="#">CSF</a>
+      <a href="#">circle_finder</a>
       <ul>
           
           
@@ -202,28 +202,14 @@ document.addEventListener("DOMContentLoaded", function() {
           
           
           
-          <li><a href="/CSF/Locating_a_ball_with_X-AI.html">Locating a Ball with X-AI</a></li>
+          <li><a href="/CSF/csf.html">csf</a></li>
           
           
           
           
           
           
-          <li><a href="/CSF/Locating_a_ball_with_segnets.html">Locating a Ball with Segmentation Networks</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a href="/CSF/Locating_a_ball_with_Object_Detectors.html">Locating a Ball with Object Detectors</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a href="/CSF/Untitled.html">Title</a></li>
+          <li><a href="/CSF/Hough_Circle_Comparison.html">Circular Seperability Filter vs Hough Circle Detection</a></li>
           
           
           
@@ -358,8 +344,9 @@ pip install .
 <span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/path/to/image.jpg&#39;</span><span class="p">)</span>
 <span class="n">csf</span> <span class="o">=</span> <span class="n">circle_finder</span><span class="o">.</span><span class="n">CircularSeparabilityFilter</span><span class="p">()</span>
 
-<span class="n">circles</span> <span class="o">=</span> <span class="n">csf</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">circles</span> <span class="o">=</span> <span class="n">csf</span><span class="o">.</span><span class="n">find_circles</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">num_circles</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circles</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]]</span>
 </pre></div>
 <p>See more in tutorials.</p>
 
