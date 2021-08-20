@@ -1,3 +1,0 @@
-[submodule "submodules/cvat"]
-	path = submodules/cvat
-	url = https://github.com/openvinotoolkit/cvat.git
