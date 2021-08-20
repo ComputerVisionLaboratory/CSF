@@ -7,13 +7,13 @@
 ## Installation
 
 ```bash
-pip install CSF
+pip install circle_finder # doesn't work yet
 ```
 
 or using github
 ```bash
-git clone https://github.com/ComputerVisionLaboratory/CSF
-cd CSF
+git clone https://github.com/ComputerVisionLaboratory/circle_finder
+cd circle_finder
 pip install .
 ```
 
