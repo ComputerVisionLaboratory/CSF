@@ -35,3 +35,18 @@ print(circles)
 
 
 See more in [tutorials](https://computervisionlaboratory.github.io/circle_finder/Hough_Circle_Comparison.html).
+
+## Roadmap
+
+### Optimize `elliptical_region()`
+
+The current implementation of `elliptical_region()` is very slow because it uses conditional indexing instead of a meshgrid approach. 20x speed increase is possible here.
+
+### Implement differential separability filter
+
+For deep learning based approach
+
+## Release Notes
+
+###  (~pre-release)
+* 2021/09/10 - Addded EllipticalSeparabilityFilter
