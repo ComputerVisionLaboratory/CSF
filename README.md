@@ -22,11 +22,11 @@ pip install .
 
 ```python
 import cv2 as cv
-import circle_finder
+from circle_finder.csf import CircularSeparabilityFilter
 
 
 img = cv.imread('/path/to/image.jpg')
-csf = circle_finder.CircularSeparabilityFilter()
+csf = CircularSeparabilityFilter()
 
 circles = csf.find_circles(img, num_circles=1)
 print(circles)
