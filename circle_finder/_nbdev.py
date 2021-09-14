@@ -11,7 +11,8 @@ index = {"expand_dim_to_3": "01_esf.ipynb",
          "regions": "01_esf.ipynb",
          "EllipticalSeparabilityFilter": "01_esf.ipynb"}
 
-modules = ["csf.py"]
+modules = ["csf.py",
+           "esf.py"]
 
 doc_url = "https://AtomScott.github.io/circle_finder/"
 
