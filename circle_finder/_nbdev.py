@@ -2,16 +2,15 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"expand_dim_to_3": "01_esf.ipynb",
-         "intensity_region_1": "00_csf.ipynb",
-         "intensity_region_2": "00_csf.ipynb",
-         "seperability_filter": "01_esf.ipynb",
-         "CircularSeparabilityFilter": "00_csf.ipynb",
-         "elliptic_region": "01_esf.ipynb",
-         "regions": "01_esf.ipynb",
-         "EllipticalSeparabilityFilter": "01_esf.ipynb"}
+index = {"expand_dim_to_3": "00_core.ipynb",
+         "elliptic_region": "00_core.ipynb",
+         "regions": "00_core.ipynb",
+         "seperability_filter": "00_core.ipynb",
+         "CircularSeparabilityFilter": "01_csf.ipynb",
+         "EllipticalSeparabilityFilter": "02_esf.ipynb"}
 
-modules = ["csf.py",
+modules = ["core.py",
+           "csf.py",
            "esf.py"]
 
 doc_url = "https://AtomScott.github.io/circle_finder/"

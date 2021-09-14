@@ -4,3 +4,7 @@ docs:
 	nbdev_build_lib
 	nbdev_build_docs
 	touch docs
+
+pull-image:
+	docker pull fastdotai/nbdev-dev:latest
+
