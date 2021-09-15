@@ -4,6 +4,8 @@ __all__ = ['CircularSeparabilityFilter']
 
 # Cell
 from .core import *
+import numpy as np
+from skimage.feature import peak_local_max
 
 # Cell
 
