@@ -2,8 +2,6 @@
 > Circle detection in images using Python.
 
 
-![](nbs/sep_demo.gif)
-
 ## Installation
 
 ```bash
@@ -14,33 +12,33 @@ or using github
 ```bash
 git clone https://github.com/ComputerVisionLaboratory/circle_finder
 cd circle_finder
-pip install .
+pip install -e .
 ```
 
+
+## Documentation
+
+[https://computervisionlaboratory.github.io/circle_finder/](https://computervisionlaboratory.github.io/circle_finder/)
 
 ## Usage
 
 ```python
 import cv2 as cv
-from circle_finder.csf import CircularSeparabilityFilter
+from circle_finder.core import EllipitcalSeparabilityFilter
 
 
 img = cv.imread('/path/to/image.jpg')
-csf = CircularSeparabilityFilter()
+esf = EllipitcalSeparabilityFilter()
 
-circles = csf.find_circles(img, num_circles=1)
+circles = esf.find_circles(img, num_circles=1)
 print(circles)
 > >>[[50, 50]]
 ```
 
 
-See more in [tutorials](https://computervisionlaboratory.github.io/circle_finder/Hough_Circle_Comparison.html).
+See more in [online documentation](https://computervisionlaboratory.github.io/circle_finder/).
 
 ## Roadmap
-
-### Optimize `elliptical_region()`
-
-The current implementation of `elliptical_region()` is very slow because it uses conditional indexing instead of a meshgrid approach. 20x speed increase is possible here.
 
 ### Implement differential separability filter
 
@@ -50,3 +48,4 @@ For deep learning based approach
 
 ###  (~pre-release)
 * 2021/09/10 - Addded EllipticalSeparabilityFilter
+* 2021/09/20 - Added torch convolutions for faster filtering

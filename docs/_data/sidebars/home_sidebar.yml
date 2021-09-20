@@ -10,11 +10,8 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: csf
-      url: csf.html
-    - output: web,pdf
-      title: Circular Seperability Filter vs Hough Circle Detection
-      url: Hough_Circle_Comparison.html
+      title: Title
+      url: core.html
     output: web
     title: circle_finder
   output: web

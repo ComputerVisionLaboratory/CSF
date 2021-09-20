@@ -1,7 +1,6 @@
 {
   "circle_finder": {
     "Overview": "/",
-    "csf": "csf.html",
-    "Circular Seperability Filter vs Hough Circle Detection": "Hough_Circle_Comparison.html"
+    "Title": "core.html"
   }
 }

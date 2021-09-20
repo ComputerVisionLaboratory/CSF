@@ -7,22 +7,22 @@
 <meta name="description" content="Circle detection in images using Python.">
 <meta name="keywords" content=" fastai">
 <title>Circular Separability Filter | CSF</title>
-<link rel="stylesheet" href="/CSF/assets/css/syntax.css">
+<link rel="stylesheet" href="/circle_finder/assets/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="assets//css/bootstrap.min.css">-->
-<link rel="stylesheet" href="/CSF/assets/css/modern-business.css">
+<link rel="stylesheet" href="/circle_finder/assets/css/modern-business.css">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="/CSF/assets/css/customstyles.css">
-<link rel="stylesheet" href="/CSF/assets/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/circle_finder/assets/css/customstyles.css">
+<link rel="stylesheet" href="/circle_finder/assets/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="/CSF/assets/css/theme-blue.css">
+<link rel="stylesheet" href="/circle_finder/assets/css/theme-blue.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="/CSF/assets/js/jquery.navgoco.min.js"></script>
+<script src="/circle_finder/assets/js/jquery.navgoco.min.js"></script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Anchor.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-<script src="/CSF/assets/js/toc.js"></script>
-<script src="/CSF/assets/js/customscripts.js"></script>
+<script src="/circle_finder/assets/js/toc.js"></script>
+<script src="/circle_finder/assets/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/CSF/assets/images/favicon.ico">
+<link rel="shortcut icon" href="/circle_finder/assets/images/favicon.ico">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="CSF" href="http://localhost:4000/CSF/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="CSF" href="http://localhost:4000/circle_finder/feed.xml">
 
 <!-- Twitter cards -->
 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="http://localhost:4000/CSF/">&nbsp;<span class="projectTitle">CSF</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="http://localhost:4000/circle_finder/">&nbsp;<span class="projectTitle">CSF</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -195,21 +195,14 @@ document.addEventListener("DOMContentLoaded", function() {
           
           
           
-          <li class="active"><a href="/CSF/">Overview</a></li>
+          <li class="active"><a href="/circle_finder/">Overview</a></li>
           
           
           
           
           
           
-          <li><a href="/CSF/csf.html">csf</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a href="/CSF/Hough_Circle_Comparison.html">Circular Seperability Filter vs Hough Circle Detection</a></li>
+          <li><a href="/circle_finder/core.html">Title</a></li>
           
           
           
@@ -294,44 +287,9 @@ $('#toc').on('click', 'a', function() {
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The text.latex.preview rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The mathtext.fallback_to_cm rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: Support for setting the &#39;mathtext.fallback_to_cm&#39; rcParam is deprecated since 3.3 and will be removed two minor releases later; use &#39;mathtext.fallback : &#39;cm&#39; instead.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The validate_bool_maybe_none function was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The keymap.all_axes rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The animation.avconv_path rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-In /home/me/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
-The animation.avconv_args rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/circle_finder/./sep_demo.gif" alt=""></p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Installation">Installation<a class="anchor-link" href="#Installation"> </a></h2><div class="highlight"><pre><span></span>pip install circle_finder <span class="c1"># doesn&#39;t work yet</span>
@@ -339,8 +297,21 @@ The animation.avconv_args rcparam was deprecated in Matplotlib 3.3 and will be r
 <p>or using github</p>
 <div class="highlight"><pre><span></span>git clone https://github.com/ComputerVisionLaboratory/circle_finder
 <span class="nb">cd</span> circle_finder
-pip install .
+pip install -e .
 </pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Documentation">Documentation<a class="anchor-link" href="#Documentation"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://computervisionlaboratory.github.io/circle_finder/">https://computervisionlaboratory.github.io/circle_finder/</a></p>
 
 </div>
 </div>
@@ -354,17 +325,46 @@ pip install .
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span> <span class="k">as</span> <span class="nn">cv</span>
-<span class="kn">import</span> <span class="nn">circle_finder</span>
+<span class="kn">from</span> <span class="nn">circle_finder.core</span> <span class="kn">import</span> <span class="n">EllipitcalSeparabilityFilter</span>
 
 
 <span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/path/to/image.jpg&#39;</span><span class="p">)</span>
-<span class="n">csf</span> <span class="o">=</span> <span class="n">circle_finder</span><span class="o">.</span><span class="n">CircularSeparabilityFilter</span><span class="p">()</span>
+<span class="n">esf</span> <span class="o">=</span> <span class="n">EllipitcalSeparabilityFilter</span><span class="p">()</span>
 
-<span class="n">circles</span> <span class="o">=</span> <span class="n">csf</span><span class="o">.</span><span class="n">find_circles</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">num_circles</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">circles</span> <span class="o">=</span> <span class="n">esf</span><span class="o">.</span><span class="n">find_circles</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">num_circles</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circles</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="o">&gt;&gt;</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]]</span>
 </pre></div>
-<p>See more in <a href="https://computervisionlaboratory.github.io/circle_finder/Hough_Circle_Comparison.html">tutorials</a>.</p>
+<p>See more in <a href="https://computervisionlaboratory.github.io/circle_finder/">online documentation</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Roadmap">Roadmap<a class="anchor-link" href="#Roadmap"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Implement-differential-separability-filter">Implement differential separability filter<a class="anchor-link" href="#Implement-differential-separability-filter"> </a></h3><p>For deep learning based approach</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Release-Notes">Release Notes<a class="anchor-link" href="#Release-Notes"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(~pre-release)">(~pre-release)<a class="anchor-link" href="#(~pre-release)"> </a></h3><ul>
+<li>2021/09/10 - Addded EllipticalSeparabilityFilter</li>
+<li>2021/09/20 - Added torch convolutions for faster filtering</li>
+</ul>
 
 </div>
 </div>
@@ -385,9 +385,9 @@ pip install .
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-                  <p><img src="/CSF/assets/images/company_logo.png" alt="Company logo"/></p>
+                  <p><img src="/circle_finder/assets/images/company_logo.png" alt="Company logo"/></p>
                &copy;2021 Atom Scott. All rights reserved. <br />
- Site last generated: Aug 20, 2021 <br />
+ Site last generated: Sep 20, 2021 <br />
                 </div>
             </div>
 </footer>

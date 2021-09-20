@@ -31,20 +31,26 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/circle_finder/./sep_demo.gif" alt=""></p>
+<h2 id="Installation">Installation<a class="anchor-link" href="#Installation"> </a></h2><div class="highlight"><pre><span></span>pip install circle_finder <span class="c1"># doesn&#39;t work yet</span>
+</pre></div>
+<p>or using github</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ComputerVisionLaboratory/circle_finder
+<span class="nb">cd</span> circle_finder
+pip install -e .
+</pre></div>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Installation">Installation<a class="anchor-link" href="#Installation"> </a></h2><div class="highlight"><pre><span></span>pip install circle_finder <span class="c1"># doesn&#39;t work yet</span>
-</pre></div>
-<p>or using github</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/ComputerVisionLaboratory/circle_finder
-<span class="nb">cd</span> circle_finder
-pip install .
-</pre></div>
+<h2 id="Documentation">Documentation<a class="anchor-link" href="#Documentation"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://computervisionlaboratory.github.io/circle_finder/">https://computervisionlaboratory.github.io/circle_finder/</a></p>
 
 </div>
 </div>
@@ -58,17 +64,17 @@ pip install .
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span> <span class="k">as</span> <span class="nn">cv</span>
-<span class="kn">from</span> <span class="nn">circle_finder.csf</span> <span class="kn">import</span> <span class="n">CircularSeparabilityFilter</span>
+<span class="kn">from</span> <span class="nn">circle_finder.core</span> <span class="kn">import</span> <span class="n">EllipitcalSeparabilityFilter</span>
 
 
 <span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/path/to/image.jpg&#39;</span><span class="p">)</span>
-<span class="n">csf</span> <span class="o">=</span> <span class="n">CircularSeparabilityFilter</span><span class="p">()</span>
+<span class="n">esf</span> <span class="o">=</span> <span class="n">EllipitcalSeparabilityFilter</span><span class="p">()</span>
 
-<span class="n">circles</span> <span class="o">=</span> <span class="n">csf</span><span class="o">.</span><span class="n">find_circles</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">num_circles</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">circles</span> <span class="o">=</span> <span class="n">esf</span><span class="o">.</span><span class="n">find_circles</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">num_circles</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circles</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="o">&gt;&gt;</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]]</span>
 </pre></div>
-<p>See more in <a href="https://computervisionlaboratory.github.io/circle_finder/Hough_Circle_Comparison.html">tutorials</a>.</p>
+<p>See more in <a href="https://computervisionlaboratory.github.io/circle_finder/">online documentation</a>.</p>
 
 </div>
 </div>
@@ -76,13 +82,6 @@ pip install .
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Roadmap">Roadmap<a class="anchor-link" href="#Roadmap"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Optimize-elliptical_region()">Optimize <code>elliptical_region()</code><a class="anchor-link" href="#Optimize-elliptical_region()"> </a></h3><p>The current implementation of <code>elliptical_region()</code> is very slow because it uses conditional indexing instead of a meshgrid approach. 20x speed increase is possible here.</p>
-
 </div>
 </div>
 </div>
@@ -103,6 +102,7 @@ pip install .
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="(~pre-release)">(~pre-release)<a class="anchor-link" href="#(~pre-release)"> </a></h3><ul>
 <li>2021/09/10 - Addded EllipticalSeparabilityFilter</li>
+<li>2021/09/20 - Added torch convolutions for faster filtering</li>
 </ul>
 
 </div>

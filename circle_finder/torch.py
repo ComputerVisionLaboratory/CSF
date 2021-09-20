@@ -12,8 +12,6 @@ from torchvision.transforms import ToTensor
 from skimage.feature import peak_local_max
 
 # Cell
-
-#export
 def expand_dim_to_3(arr):
     if arr.ndim == 2:
         return np.expand_dims(arr, axis=-1)
@@ -21,6 +19,8 @@ def expand_dim_to_3(arr):
         return arr
     else:
         raise ValueError()
+
+# Cell
 
 def parametric_ellipse(alpha, A, a, b):
     X = a * np.cos(alpha) * np.cos(A) - b * np.sin(alpha) * np.sin(A)
@@ -46,8 +46,6 @@ def elliplise(axes, angle, center=None, width=None, height=None):
     template = torch.Tensor(cv.ellipse(mask, center, axes, angle, color=1, thickness=-1, startAngle=0, endAngle=360)).unsqueeze(0)
     return template
 
-
-# Cell
 
 class EllipticalSeparabilityFilter:
     def __init__(self, axes_in, axes_out, angle):
@@ -107,7 +105,7 @@ class EllipticalSeparabilityFilter:
         return inner_region, outer_region, full_region
 
     def find_circles(self, img, num_circles=None):
-        sepmap = self.__call__(img).numpy().squeeze().T
+        sepmap = seperability_filter(img, self.axes_in, self.axes_out, self.angle)
         sepmap[np.isnan(sepmap)]=0
         peaks = peak_local_max(sepmap)
 
